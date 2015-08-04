@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FruitViewController.h
 //  Fruity
 //
 //  Created by Liam Beeton on 04/08/2015.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FruitViewController : UIViewController
 
 @end
-

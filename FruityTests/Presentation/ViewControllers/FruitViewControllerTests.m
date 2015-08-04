@@ -1,6 +1,6 @@
 //
-//  FruityTests.m
-//  FruityTests
+//  FruitViewControllerTests.m
+//  Fruity
 //
 //  Created by Liam Beeton on 04/08/2015.
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface FruityTests : XCTestCase
+@interface FruitViewControllerTests : XCTestCase
 
 @end
 
-@implementation FruityTests
+@implementation FruitViewControllerTests
 
 - (void)setUp {
     [super setUp];

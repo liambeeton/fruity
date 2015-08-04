@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		22A75FB01B713DC300CEEF9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */; };
+		22A75FB41B7145ED00CEEF9D /* FruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB31B7145ED00CEEF9D /* FruitViewController.m */; };
+		22A75FB61B71466F00CEEF9D /* FruitViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB51B71466F00CEEF9D /* FruitViewControllerTests.m */; };
+		22A75FBF1B714B9A00CEEF9D /* FruitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FBE1B714B9A00CEEF9D /* FruitService.m */; };
+		22A75FC31B714BC400CEEF9D /* FruitServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FC21B714BC400CEEF9D /* FruitServiceTests.m */; };
+		22A75FC71B714C1600CEEF9D /* Fruit.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FC61B714C1600CEEF9D /* Fruit.m */; };
 		22FFEEE71B713D0F00D6C67F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEE61B713D0F00D6C67F /* main.m */; };
 		22FFEEEA1B713D0F00D6C67F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEE91B713D0F00D6C67F /* AppDelegate.m */; };
-		22FFEEED1B713D0F00D6C67F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEEC1B713D0F00D6C67F /* ViewController.m */; };
 		22FFEEF21B713D0F00D6C67F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FFEEF11B713D0F00D6C67F /* Images.xcassets */; };
-		22FFEF011B713D0F00D6C67F /* FruityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEF001B713D0F00D6C67F /* FruityTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +30,22 @@
 
 /* Begin PBXFileReference section */
 		22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		22A75FB21B7145ED00CEEF9D /* FruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitViewController.h; path = Presentation/ViewControllers/FruitViewController.h; sourceTree = "<group>"; };
+		22A75FB31B7145ED00CEEF9D /* FruitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitViewController.m; path = Presentation/ViewControllers/FruitViewController.m; sourceTree = "<group>"; };
+		22A75FB51B71466F00CEEF9D /* FruitViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitViewControllerTests.m; path = Presentation/ViewControllers/FruitViewControllerTests.m; sourceTree = "<group>"; };
+		22A75FBD1B714B9A00CEEF9D /* FruitService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitService.h; path = Logic/Services/FruitService.h; sourceTree = "<group>"; };
+		22A75FBE1B714B9A00CEEF9D /* FruitService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitService.m; path = Logic/Services/FruitService.m; sourceTree = "<group>"; };
+		22A75FC21B714BC400CEEF9D /* FruitServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitServiceTests.m; path = Logic/Services/FruitServiceTests.m; sourceTree = "<group>"; };
+		22A75FC51B714C1600CEEF9D /* Fruit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fruit.h; path = Logic/Models/Fruit.h; sourceTree = "<group>"; };
+		22A75FC61B714C1600CEEF9D /* Fruit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fruit.m; path = Logic/Models/Fruit.m; sourceTree = "<group>"; };
 		22FFEEE11B713D0F00D6C67F /* Fruity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FFEEE51B713D0F00D6C67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22FFEEE61B713D0F00D6C67F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22FFEEE81B713D0F00D6C67F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22FFEEE91B713D0F00D6C67F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		22FFEEEB1B713D0F00D6C67F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		22FFEEEC1B713D0F00D6C67F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22FFEEF11B713D0F00D6C67F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22FFEEFA1B713D0F00D6C67F /* FruityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FFEEFF1B713D0F00D6C67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22FFEF001B713D0F00D6C67F /* FruityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FruityTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22A75FB71B71478600CEEF9D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FB81B71479C00CEEF9D /* ViewControllers */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		22A75FB81B71479C00CEEF9D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FB21B7145ED00CEEF9D /* FruitViewController.h */,
+				22A75FB31B7145ED00CEEF9D /* FruitViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22A75FB91B7147C000CEEF9D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FBA1B7147C700CEEF9D /* ViewControllers */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		22A75FBA1B7147C700CEEF9D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FB51B71466F00CEEF9D /* FruitViewControllerTests.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22A75FBB1B714B6400CEEF9D /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FC41B714C0100CEEF9D /* Models */,
+				22A75FBC1B714B6E00CEEF9D /* Services */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		22A75FBC1B714B6E00CEEF9D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FBD1B714B9A00CEEF9D /* FruitService.h */,
+				22A75FBE1B714B9A00CEEF9D /* FruitService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		22A75FC01B714B9F00CEEF9D /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FC11B714BA400CEEF9D /* Services */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		22A75FC11B714BA400CEEF9D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FC21B714BC400CEEF9D /* FruitServiceTests.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		22A75FC41B714C0100CEEF9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22A75FC51B714C1600CEEF9D /* Fruit.h */,
+				22A75FC61B714C1600CEEF9D /* Fruit.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		22FFEED81B713D0F00D6C67F = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +164,10 @@
 		22FFEEE31B713D0F00D6C67F /* Fruity */ = {
 			isa = PBXGroup;
 			children = (
+				22A75FBB1B714B6400CEEF9D /* Logic */,
+				22A75FB71B71478600CEEF9D /* Presentation */,
 				22FFEEE81B713D0F00D6C67F /* AppDelegate.h */,
 				22FFEEE91B713D0F00D6C67F /* AppDelegate.m */,
-				22FFEEEB1B713D0F00D6C67F /* ViewController.h */,
-				22FFEEEC1B713D0F00D6C67F /* ViewController.m */,
 				22FFEEF11B713D0F00D6C67F /* Images.xcassets */,
 				22FFEEE41B713D0F00D6C67F /* Supporting Files */,
 			);
@@ -102,7 +186,8 @@
 		22FFEEFD1B713D0F00D6C67F /* FruityTests */ = {
 			isa = PBXGroup;
 			children = (
-				22FFEF001B713D0F00D6C67F /* FruityTests.m */,
+				22A75FC01B714B9F00CEEF9D /* Logic */,
+				22A75FB91B7147C000CEEF9D /* Presentation */,
 				22FFEEFE1B713D0F00D6C67F /* Supporting Files */,
 			);
 			path = FruityTests;
@@ -215,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22FFEEED1B713D0F00D6C67F /* ViewController.m in Sources */,
+				22A75FC71B714C1600CEEF9D /* Fruit.m in Sources */,
+				22A75FBF1B714B9A00CEEF9D /* FruitService.m in Sources */,
+				22A75FB41B7145ED00CEEF9D /* FruitViewController.m in Sources */,
 				22FFEEEA1B713D0F00D6C67F /* AppDelegate.m in Sources */,
 				22FFEEE71B713D0F00D6C67F /* main.m in Sources */,
 			);
@@ -225,7 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22FFEF011B713D0F00D6C67F /* FruityTests.m in Sources */,
+				22A75FC31B714BC400CEEF9D /* FruitServiceTests.m in Sources */,
+				22A75FB61B71466F00CEEF9D /* FruitViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
