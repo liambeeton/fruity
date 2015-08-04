@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22A75FB01B713DC300CEEF9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */; };
 		22FFEEE71B713D0F00D6C67F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEE61B713D0F00D6C67F /* main.m */; };
 		22FFEEEA1B713D0F00D6C67F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEE91B713D0F00D6C67F /* AppDelegate.m */; };
 		22FFEEED1B713D0F00D6C67F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEEC1B713D0F00D6C67F /* ViewController.m */; };
-		22FFEEF01B713D0F00D6C67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FFEEEE1B713D0F00D6C67F /* Main.storyboard */; };
 		22FFEEF21B713D0F00D6C67F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FFEEF11B713D0F00D6C67F /* Images.xcassets */; };
-		22FFEEF51B713D0F00D6C67F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FFEEF31B713D0F00D6C67F /* LaunchScreen.xib */; };
 		22FFEF011B713D0F00D6C67F /* FruityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEF001B713D0F00D6C67F /* FruityTests.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22FFEEE11B713D0F00D6C67F /* Fruity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FFEEE51B713D0F00D6C67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22FFEEE61B713D0F00D6C67F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -34,9 +34,7 @@
 		22FFEEE91B713D0F00D6C67F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		22FFEEEB1B713D0F00D6C67F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		22FFEEEC1B713D0F00D6C67F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		22FFEEEF1B713D0F00D6C67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22FFEEF11B713D0F00D6C67F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22FFEEF41B713D0F00D6C67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		22FFEEFA1B713D0F00D6C67F /* FruityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FFEEFF1B713D0F00D6C67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22FFEF001B713D0F00D6C67F /* FruityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FruityTests.m; sourceTree = "<group>"; };
@@ -63,6 +61,7 @@
 		22FFEED81B713D0F00D6C67F = {
 			isa = PBXGroup;
 			children = (
+				22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */,
 				22FFEEE31B713D0F00D6C67F /* Fruity */,
 				22FFEEFD1B713D0F00D6C67F /* FruityTests */,
 				22FFEEE21B713D0F00D6C67F /* Products */,
@@ -85,9 +84,7 @@
 				22FFEEE91B713D0F00D6C67F /* AppDelegate.m */,
 				22FFEEEB1B713D0F00D6C67F /* ViewController.h */,
 				22FFEEEC1B713D0F00D6C67F /* ViewController.m */,
-				22FFEEEE1B713D0F00D6C67F /* Main.storyboard */,
 				22FFEEF11B713D0F00D6C67F /* Images.xcassets */,
-				22FFEEF31B713D0F00D6C67F /* LaunchScreen.xib */,
 				22FFEEE41B713D0F00D6C67F /* Supporting Files */,
 			);
 			path = Fruity;
@@ -199,9 +196,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22FFEEF01B713D0F00D6C67F /* Main.storyboard in Resources */,
-				22FFEEF51B713D0F00D6C67F /* LaunchScreen.xib in Resources */,
 				22FFEEF21B713D0F00D6C67F /* Images.xcassets in Resources */,
+				22A75FB01B713DC300CEEF9D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +238,6 @@
 			targetProxy = 22FFEEFB1B713D0F00D6C67F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		22FFEEEE1B713D0F00D6C67F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22FFEEEF1B713D0F00D6C67F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		22FFEEF31B713D0F00D6C67F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22FFEEF41B713D0F00D6C67F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		22FFEF021B713D0F00D6C67F /* Debug */ = {
@@ -416,6 +393,7 @@
 				22FFEF061B713D0F00D6C67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22FFEF071B713D0F00D6C67F /* Build configuration list for PBXNativeTarget "FruityTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +402,7 @@
 				22FFEF091B713D0F00D6C67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
