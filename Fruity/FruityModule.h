@@ -1,17 +1,13 @@
 //
-//  FruitService.m
+//  FruityModule.h
 //  Fruity
 //
 //  Created by Liam Beeton on 04/08/2015.
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
-#import "FruitService.h"
+#import "JSObjectionModule.h"
 
-@implementation FruitService
-
-- (NSArray *)listOfFruits {
-    return @[];
-}
+@interface FruityModule : JSObjectionModule
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FruitService.h"
 
 @interface FruitViewController : UIViewController
+
+@property (strong, nonatomic) id<FruitService> fruitService;
 
 @end

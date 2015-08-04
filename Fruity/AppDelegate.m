@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
+#import <Objection/Objection.h>
 #import "AppDelegate.h"
+#import "FruityModule.h"
 
 @interface AppDelegate ()
 
@@ -14,10 +16,18 @@
 
 @implementation AppDelegate
 
+objection_requires(@"fruitViewController")
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[JSObjection defaultInjector] injectDependencies:self];
+    
+    JSObjectionInjector *injector = [JSObjection createInjector:[[FruityModule alloc] init]];
+    [JSObjection setDefaultInjector:injector];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.window.rootViewController = self.fruitViewController;
     
     [self.window makeKeyAndVisible];
     

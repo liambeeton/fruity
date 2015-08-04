@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
+#import <Objection/Objection.h>
 #import "FruitViewController.h"
 
 @interface FruitViewController ()
@@ -14,9 +15,17 @@
 
 @implementation FruitViewController
 
+objection_requires(@"fruitService")
+
 - (void)viewDidLoad {
+    [[JSObjection defaultInjector] injectDependencies:self];
+    
+    NSAssert([self.fruitService class] == [FruitService class], @"fruitService should be of kind FruitService");
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // NSArray *fruits = [self.fruitService listOfFruits];
+    
 }
 
 - (void)didReceiveMemoryWarning {
