@@ -1,0 +1,13 @@
+PODS:
+  - Objection (1.6.1)
+  - OCMock (3.1.2)
+
+DEPENDENCIES:
+  - Objection (~> 1.6)
+  - OCMock (~> 3.1)
+
+SPEC CHECKSUMS:
+  Objection: ed03f2219cb22d2b5b893114219fe6c7e3263bde
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+
+COCOAPODS: 0.38.2
