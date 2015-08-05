@@ -20,9 +20,7 @@
     
     if (jsonData) {
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-        
         NSArray *jsonArray = [jsonDict objectForKey:kFruitDataKey];
-        
         NSMutableArray *fruit = [[NSMutableArray alloc] init];
         
         for (id object in jsonArray) {
