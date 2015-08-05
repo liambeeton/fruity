@@ -15,7 +15,7 @@
 
 @implementation AppDelegate
 
-objection_requires(@"fruitViewController")
+objection_requires(@"navigationController", @"fruitViewController")
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     JSObjectionInjector *injector = [JSObjection createInjector];
@@ -26,7 +26,9 @@ objection_requires(@"fruitViewController")
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.window.rootViewController = self.fruitViewController;
+    [self.navigationController setViewControllers:@[self.fruitViewController] animated:NO];
+    
+    self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
     

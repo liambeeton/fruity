@@ -10,8 +10,9 @@
 #import "FruitService.h"
 #import "Fruit.h"
 
-@interface FruitViewController : UIViewController
+@interface FruitViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) FruitService *fruitService;
 @property (strong, nonatomic) NSArray *fruit;
 
