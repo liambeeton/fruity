@@ -8,7 +8,6 @@
 
 #import <Objection/Objection.h>
 #import "AppDelegate.h"
-#import "FruityModule.h"
 
 @interface AppDelegate ()
 
@@ -19,10 +18,10 @@
 objection_requires(@"fruitViewController")
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[JSObjection defaultInjector] injectDependencies:self];
-    
-    JSObjectionInjector *injector = [JSObjection createInjector:[[FruityModule alloc] init]];
+    JSObjectionInjector *injector = [JSObjection createInjector];
     [JSObjection setDefaultInjector:injector];
+    
+    [[JSObjection defaultInjector] injectDependencies:self];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

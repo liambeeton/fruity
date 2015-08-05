@@ -8,9 +8,20 @@
 
 #import "FruitService.h"
 
+#define kFruitDataUrl @"https://raw.githubusercontent.com/fmtvp/recruit-test-data/master/data.json"
+#define kFruitDataKey @"fruit"
+
 @implementation FruitService
 
-- (NSArray *)listOfFruits {
+- (NSArray *)allFruits {
+    NSURL *url = [NSURL URLWithString:kFruitDataUrl];
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    
+    if (jsonData) {
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+        return [jsonDict objectForKey:kFruitDataKey];
+    }
+    
     return @[];
 }
 

@@ -11,6 +11,6 @@
 
 @interface FruitViewController : UIViewController
 
-@property (strong, nonatomic) id<FruitService> fruitService;
+@property (strong, nonatomic) FruitService *fruitService;
 
 @end

@@ -8,12 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol FruitService <NSObject>
+@interface FruitService : NSObject
 
-- (NSArray *)listOfFruits;
-
-@end
-
-@interface FruitService : NSObject <FruitService>
+- (NSArray *)allFruits;
 
 @end

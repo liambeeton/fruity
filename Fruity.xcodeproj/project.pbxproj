@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22A6C7201B715917000F6950 /* FruityModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A6C71F1B715917000F6950 /* FruityModule.m */; };
 		22A75FB01B713DC300CEEF9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */; };
 		22A75FB41B7145ED00CEEF9D /* FruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB31B7145ED00CEEF9D /* FruitViewController.m */; };
-		22A75FB61B71466F00CEEF9D /* FruitViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB51B71466F00CEEF9D /* FruitViewControllerTests.m */; };
+		22A75FB61B71466F00CEEF9D /* FruitViewControllerShould.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB51B71466F00CEEF9D /* FruitViewControllerShould.m */; };
 		22A75FBF1B714B9A00CEEF9D /* FruitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FBE1B714B9A00CEEF9D /* FruitService.m */; };
-		22A75FC31B714BC400CEEF9D /* FruitServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FC21B714BC400CEEF9D /* FruitServiceTests.m */; };
+		22A75FC31B714BC400CEEF9D /* FruitServiceShould.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FC21B714BC400CEEF9D /* FruitServiceShould.m */; };
 		22A75FC71B714C1600CEEF9D /* Fruit.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FC61B714C1600CEEF9D /* Fruit.m */; };
 		22FFEEE71B713D0F00D6C67F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEE61B713D0F00D6C67F /* main.m */; };
 		22FFEEEA1B713D0F00D6C67F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FFEEE91B713D0F00D6C67F /* AppDelegate.m */; };
@@ -33,15 +32,13 @@
 /* Begin PBXFileReference section */
 		091D9DA49ABFF95E042CFEDC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1415AB403354858A829D6743 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		22A6C71E1B715917000F6950 /* FruityModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FruityModule.h; sourceTree = "<group>"; };
-		22A6C71F1B715917000F6950 /* FruityModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FruityModule.m; sourceTree = "<group>"; };
 		22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22A75FB21B7145ED00CEEF9D /* FruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitViewController.h; path = Presentation/ViewControllers/FruitViewController.h; sourceTree = "<group>"; };
 		22A75FB31B7145ED00CEEF9D /* FruitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitViewController.m; path = Presentation/ViewControllers/FruitViewController.m; sourceTree = "<group>"; };
-		22A75FB51B71466F00CEEF9D /* FruitViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitViewControllerTests.m; path = Presentation/ViewControllers/FruitViewControllerTests.m; sourceTree = "<group>"; };
+		22A75FB51B71466F00CEEF9D /* FruitViewControllerShould.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitViewControllerShould.m; path = Presentation/ViewControllers/FruitViewControllerShould.m; sourceTree = "<group>"; };
 		22A75FBD1B714B9A00CEEF9D /* FruitService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitService.h; path = Logic/Services/FruitService.h; sourceTree = "<group>"; };
 		22A75FBE1B714B9A00CEEF9D /* FruitService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitService.m; path = Logic/Services/FruitService.m; sourceTree = "<group>"; };
-		22A75FC21B714BC400CEEF9D /* FruitServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitServiceTests.m; path = Logic/Services/FruitServiceTests.m; sourceTree = "<group>"; };
+		22A75FC21B714BC400CEEF9D /* FruitServiceShould.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitServiceShould.m; path = Logic/Services/FruitServiceShould.m; sourceTree = "<group>"; };
 		22A75FC51B714C1600CEEF9D /* Fruit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fruit.h; path = Logic/Models/Fruit.h; sourceTree = "<group>"; };
 		22A75FC61B714C1600CEEF9D /* Fruit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fruit.m; path = Logic/Models/Fruit.m; sourceTree = "<group>"; };
 		22FFEEE11B713D0F00D6C67F /* Fruity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +99,7 @@
 		22A75FBA1B7147C700CEEF9D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				22A75FB51B71466F00CEEF9D /* FruitViewControllerTests.m */,
+				22A75FB51B71466F00CEEF9D /* FruitViewControllerShould.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -136,7 +133,7 @@
 		22A75FC11B714BA400CEEF9D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				22A75FC21B714BC400CEEF9D /* FruitServiceTests.m */,
+				22A75FC21B714BC400CEEF9D /* FruitServiceShould.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -174,14 +171,12 @@
 		22FFEEE31B713D0F00D6C67F /* Fruity */ = {
 			isa = PBXGroup;
 			children = (
-				22A75FBB1B714B6400CEEF9D /* Logic */,
-				22A75FB71B71478600CEEF9D /* Presentation */,
 				22FFEEE81B713D0F00D6C67F /* AppDelegate.h */,
 				22FFEEE91B713D0F00D6C67F /* AppDelegate.m */,
 				22FFEEF11B713D0F00D6C67F /* Images.xcassets */,
+				22A75FBB1B714B6400CEEF9D /* Logic */,
+				22A75FB71B71478600CEEF9D /* Presentation */,
 				22FFEEE41B713D0F00D6C67F /* Supporting Files */,
-				22A6C71E1B715917000F6950 /* FruityModule.h */,
-				22A6C71F1B715917000F6950 /* FruityModule.m */,
 			);
 			path = Fruity;
 			sourceTree = "<group>";
@@ -366,7 +361,6 @@
 			files = (
 				22A75FC71B714C1600CEEF9D /* Fruit.m in Sources */,
 				22A75FBF1B714B9A00CEEF9D /* FruitService.m in Sources */,
-				22A6C7201B715917000F6950 /* FruityModule.m in Sources */,
 				22A75FB41B7145ED00CEEF9D /* FruitViewController.m in Sources */,
 				22FFEEEA1B713D0F00D6C67F /* AppDelegate.m in Sources */,
 				22FFEEE71B713D0F00D6C67F /* main.m in Sources */,
@@ -377,8 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22A75FC31B714BC400CEEF9D /* FruitServiceTests.m in Sources */,
-				22A75FB61B71466F00CEEF9D /* FruitViewControllerTests.m in Sources */,
+				22A75FC31B714BC400CEEF9D /* FruitServiceShould.m in Sources */,
+				22A75FB61B71466F00CEEF9D /* FruitViewControllerShould.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

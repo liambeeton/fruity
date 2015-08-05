@@ -20,12 +20,11 @@ objection_requires(@"fruitService")
 - (void)viewDidLoad {
     [[JSObjection defaultInjector] injectDependencies:self];
     
-    NSAssert([self.fruitService class] == [FruitService class], @"fruitService should be of kind FruitService");
-    
     [super viewDidLoad];
     
-    // NSArray *fruits = [self.fruitService listOfFruits];
+    NSArray *fruits = [self.fruitService allFruits];
     
+    NSLog(@"%@", fruits);
 }
 
 - (void)didReceiveMemoryWarning {
