@@ -29,7 +29,7 @@
 }
 
 - (void)testReturnAnArrayOfFruits {
-    NSArray *fruits = [self.fruitService allFruits];
+    NSArray *fruits = [self.fruitService allFruit];
     
     XCTAssert([fruits count] > 0, @"Fruit array item count should be greater than zero");
 }

@@ -22,9 +22,7 @@ objection_requires(@"fruitService")
     
     [super viewDidLoad];
     
-    NSArray *fruits = [self.fruitService allFruits];
-    
-    NSLog(@"%@", fruits);
+    self.fruit = [self.fruitService allFruit];
 }
 
 - (void)didReceiveMemoryWarning {

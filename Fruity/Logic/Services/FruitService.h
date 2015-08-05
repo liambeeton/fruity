@@ -10,6 +10,6 @@
 
 @interface FruitService : NSObject
 
-- (NSArray *)allFruits;
+- (NSArray *)allFruit;
 
 @end

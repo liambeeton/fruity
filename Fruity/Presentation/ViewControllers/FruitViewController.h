@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "FruitService.h"
+#import "Fruit.h"
 
 @interface FruitViewController : UIViewController
 
 @property (strong, nonatomic) FruitService *fruitService;
+@property (strong, nonatomic) NSArray *fruit;
 
 @end
