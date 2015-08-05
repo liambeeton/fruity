@@ -1,28 +1,29 @@
 //
-//  FruitViewController.m
+//  FruitDetailViewController.m
 //  Fruity
 //
-//  Created by Liam Beeton on 04/08/2015.
+//  Created by Liam Beeton on 05/08/2015.
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
 #import <Objection/Objection.h>
-#import "FruitViewController.h"
+#import "FruitDetailViewController.h"
 
-@interface FruitViewController ()
+@interface FruitDetailViewController ()
 
 @end
 
-@implementation FruitViewController
+@implementation FruitDetailViewController
 
-objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
+objection_requires(@"tableView", @"fruit")
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.navigationItem.title = NSLocalizedString(@"Fruity", nil);
+- (void)setFruit:(Fruit *)fruit {
+    if (![_fruit isEqual:fruit]) {
+        if (fruit.price != nil && fruit.type != nil) {
+            _fruit = fruit;
+            self.navigationItem.title = fruit.type;
+        }
     }
-    return self;
 }
 
 #pragma mark - View lifecycle
@@ -33,7 +34,6 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
     [super viewDidLoad];
     
     self.tableView.frame = self.view.bounds;
-    self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.userInteractionEnabled = YES;
     self.tableView.contentMode = UIViewContentModeRedraw;
@@ -43,8 +43,6 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     [self.view addSubview:self.tableView];
-    
-    self.fruit = [self.fruitService allFruit];
 }
 
 #pragma mark - Memory management
@@ -60,33 +58,29 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.fruit count];
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                      reuseIdentifier:cellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellEditingStyleNone;
     }
     
-    Fruit *fruit = [self.fruit objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = fruit.type;
+    if (indexPath.row == 0) {
+        cell.textLabel.text = [self.fruit.price stringValue];
+    } else if (indexPath.row == 1) {
+        cell.textLabel.text = self.fruit.type;
+    } else if (indexPath.row == 2) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", @(self.fruit.weight)];
+    }
     
     return cell;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.fruitDetailViewController.fruit = [self.fruit objectAtIndex:indexPath.row];
-    
-    [self.navigationController pushViewController:self.fruitDetailViewController animated:YES];
 }
 
 @end

@@ -17,5 +17,7 @@
 - (instancetype)initWithPrice:(NSDecimalNumber *)price
                          type:(NSString *)type
                        weight:(NSUInteger)weight;
+- (BOOL)isEqual:(id)obj;
+- (NSUInteger)hash;
 
 @end
