@@ -6,30 +6,34 @@
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
+#import "BaseTestCase.h"
+#import "FruitViewController.h"
+#import "FruitService.h"
 
-@interface FruitViewControllerShould : XCTestCase
+@interface FruitViewControllerShould : BaseTestCase
 
 @end
 
-@implementation FruitViewControllerShould
+@implementation FruitViewControllerShould {
+    id fruitServiceMock;
+    FruitViewController *fruitViewController;
+}
 
 - (void)setUp {
     [super setUp];
+    
+    fruitServiceMock = [self mockForClass:[FruitService class]];
+    fruitViewController = [[FruitViewController alloc] init];
 }
 
 - (void)tearDown {
     [super tearDown];
 }
 
-- (void)testExample {
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-    }];
+- (void)testLoadAllFruit {
+    [fruitViewController viewDidLoad];
+    
+    OCMVerify([fruitServiceMock allFruit]);
 }
 
 @end

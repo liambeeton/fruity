@@ -9,11 +9,13 @@
 #import <Objection/Objection.h>
 #import "FruitViewController.h"
 
-@interface FruitViewController ()
+@interface FruitViewController (Private)
 
 @end
 
-@implementation FruitViewController
+@implementation FruitViewController {
+    NSArray *fruitArray;
+}
 
 objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
 
@@ -44,7 +46,7 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
     
     [self.view addSubview:self.tableView];
     
-    self.fruit = [self.fruitService allFruit];
+    fruitArray = [self.fruitService allFruit];
 }
 
 #pragma mark - Memory management
@@ -60,7 +62,7 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.fruit count];
+    return [fruitArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,7 +76,7 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
         cell.selectionStyle = UITableViewCellEditingStyleNone;
     }
     
-    Fruit *fruit = [self.fruit objectAtIndex:indexPath.row];
+    Fruit *fruit = [fruitArray objectAtIndex:indexPath.row];
     
     cell.textLabel.text = fruit.type;
     
@@ -84,7 +86,7 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.fruitDetailViewController.fruit = [self.fruit objectAtIndex:indexPath.row];
+    self.fruitDetailViewController.fruit = [fruitArray objectAtIndex:indexPath.row];
     
     [self.navigationController pushViewController:self.fruitDetailViewController animated:YES];
 }

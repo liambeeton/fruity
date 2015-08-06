@@ -16,6 +16,5 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) FruitDetailViewController *fruitDetailViewController;
 @property (strong, nonatomic) FruitService *fruitService;
-@property (strong, nonatomic) NSArray *fruit;
 
 @end

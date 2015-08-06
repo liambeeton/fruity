@@ -9,7 +9,7 @@
 #import <Objection/Objection.h>
 #import "FruitDetailViewController.h"
 
-@interface FruitDetailViewController ()
+@interface FruitDetailViewController (Private)
 
 @end
 

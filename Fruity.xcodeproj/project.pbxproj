@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023648A280D9B30044513588 /* libPods-FruityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 385530F29E17CF7423A7CBC7 /* libPods-FruityTests.a */; };
+		22455F631B739DC0005880A6 /* BaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22455F621B739DC0005880A6 /* BaseTestCase.m */; };
 		22A75FB01B713DC300CEEF9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */; };
 		22A75FB41B7145ED00CEEF9D /* FruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB31B7145ED00CEEF9D /* FruitViewController.m */; };
 		22A75FB61B71466F00CEEF9D /* FruitViewControllerShould.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A75FB51B71466F00CEEF9D /* FruitViewControllerShould.m */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		091D9DA49ABFF95E042CFEDC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1415AB403354858A829D6743 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		22455F611B739DC0005880A6 /* BaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTestCase.h; sourceTree = "<group>"; };
+		22455F621B739DC0005880A6 /* BaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTestCase.m; sourceTree = "<group>"; };
 		22A75FAF1B713DC300CEEF9D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		22A75FB21B7145ED00CEEF9D /* FruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitViewController.h; path = Presentation/ViewControllers/FruitViewController.h; sourceTree = "<group>"; };
 		22A75FB31B7145ED00CEEF9D /* FruitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FruitViewController.m; path = Presentation/ViewControllers/FruitViewController.m; sourceTree = "<group>"; };
@@ -54,7 +58,10 @@
 		22FFEEF11B713D0F00D6C67F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22FFEEFA1B713D0F00D6C67F /* FruityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FFEEFF1B713D0F00D6C67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385530F29E17CF7423A7CBC7 /* libPods-FruityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FruityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E26A7C4F9775818B30FA470 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		954C23BCAEF3E960172B0FD2 /* Pods-FruityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruityTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FruityTests/Pods-FruityTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3D77B02351B0A11D65E14C1 /* Pods-FruityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FruityTests/Pods-FruityTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023648A280D9B30044513588 /* libPods-FruityTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +225,8 @@
 		22FFEEFD1B713D0F00D6C67F /* FruityTests */ = {
 			isa = PBXGroup;
 			children = (
+				22455F611B739DC0005880A6 /* BaseTestCase.h */,
+				22455F621B739DC0005880A6 /* BaseTestCase.m */,
 				22A75FC01B714B9F00CEEF9D /* Logic */,
 				22A75FB91B7147C000CEEF9D /* Presentation */,
 				22FFEEFE1B713D0F00D6C67F /* Supporting Files */,
@@ -237,6 +247,8 @@
 			children = (
 				5E26A7C4F9775818B30FA470 /* Pods.debug.xcconfig */,
 				1415AB403354858A829D6743 /* Pods.release.xcconfig */,
+				C3D77B02351B0A11D65E14C1 /* Pods-FruityTests.debug.xcconfig */,
+				954C23BCAEF3E960172B0FD2 /* Pods-FruityTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -245,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				091D9DA49ABFF95E042CFEDC /* libPods.a */,
+				385530F29E17CF7423A7CBC7 /* libPods-FruityTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22FFEF071B713D0F00D6C67F /* Build configuration list for PBXNativeTarget "FruityTests" */;
 			buildPhases = (
+				F14A6E3EA12FB1A6ECDD9620 /* Check Pods Manifest.lock */,
 				22FFEEF61B713D0F00D6C67F /* Sources */,
 				22FFEEF71B713D0F00D6C67F /* Frameworks */,
 				22FFEEF81B713D0F00D6C67F /* Resources */,
+				602AD9D6B1866CD9174CCC7C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,6 +361,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		602AD9D6B1866CD9174CCC7C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FruityTests/Pods-FruityTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A5B32F8B501CE41A49B5F68B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +389,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F14A6E3EA12FB1A6ECDD9620 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FED8EC93F50E33D5E624E036 /* Check Pods Manifest.lock */ = {
@@ -396,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22455F631B739DC0005880A6 /* BaseTestCase.m in Sources */,
 				22A75FC31B714BC400CEEF9D /* FruitServiceShould.m in Sources */,
 				22A75FB61B71466F00CEEF9D /* FruitViewControllerShould.m in Sources */,
 				22D4C5F21B72A760007D947B /* FruitDetailViewControllerShould.m in Sources */,
@@ -517,6 +563,7 @@
 		};
 		22FFEF081B713D0F00D6C67F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3D77B02351B0A11D65E14C1 /* Pods-FruityTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -536,6 +583,7 @@
 		};
 		22FFEF091B713D0F00D6C67F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 954C23BCAEF3E960172B0FD2 /* Pods-FruityTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
