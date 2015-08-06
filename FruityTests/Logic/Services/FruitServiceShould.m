@@ -6,22 +6,23 @@
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>
 #import "FruitService.h"
 
 @interface FruitServiceShould : XCTestCase
 
-@property (strong, nonatomic) FruitService *fruitService;
-
 @end
 
-@implementation FruitServiceShould
+@implementation FruitServiceShould {
+    FruitService *fruitService;
+}
 
 - (void)setUp {
     [super setUp];
     
-    self.fruitService = [[FruitService alloc] init];
+    fruitService = [[FruitService alloc] init];
 }
 
 - (void)tearDown {
@@ -29,14 +30,9 @@
 }
 
 - (void)testReturnAnArrayOfFruits {
-    NSArray *fruits = [self.fruitService allFruit];
+    NSArray *fruits = [fruitService allFruit];
     
-    XCTAssert([fruits count] > 0, @"Fruit array item count should be greater than zero");
-}
-
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-    }];
+    assertThat(fruits, isNot(isEmpty()));
 }
 
 @end
