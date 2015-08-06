@@ -13,6 +13,7 @@
 
 @interface BaseTestCase : XCTestCase
 
+- (void)initialiseInjector;
 - (id)mockForClass:(Class)class;
 - (void)setRootViewController:(UIViewController *)viewController;
 - (UIView *)findSubviewOf:(UIView *)view WithAccessibilityID:(NSString *)identifier;

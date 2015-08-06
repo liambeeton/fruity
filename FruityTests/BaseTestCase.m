@@ -26,16 +26,22 @@
     [super tearDown];
 }
 
+- (void)initialiseInjector {
+    [JSObjection setDefaultInjector:injector];
+}
+
 - (id)mockForClass:(Class)class {
     id mock = OCMClassMock(class);
+    
     [self bindModuleWithMock:mock andClass:class];
+    [self initialiseInjector];
+    
     return mock;
 }
 
 - (void)bindModuleWithMock:(id)mock andClass:(Class)class {
     [testModule bind:mock toClass:class];
     injector = [JSObjection createInjector:testModule];
-    [JSObjection setDefaultInjector:injector];
 }
 
 - (void)setRootViewController:(UIViewController *)viewController {
