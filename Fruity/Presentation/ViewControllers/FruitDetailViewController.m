@@ -15,7 +15,7 @@
 
 @implementation FruitDetailViewController
 
-objection_requires(@"tableView", @"fruit")
+objection_requires(@"tableView")
 
 - (void)setFruit:(Fruit *)fruit {
     if (![_fruit isEqual:fruit]) {

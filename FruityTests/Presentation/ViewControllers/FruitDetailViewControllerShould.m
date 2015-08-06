@@ -6,14 +6,18 @@
 //  Copyright (c) 2015 Liam Beeton. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
+#import "BaseTestCase.h"
+#import "FruitDetailViewController.h"
 
-@interface FruitDetailViewControllerShould : XCTestCase
+@interface FruitDetailViewControllerShould : BaseTestCase
 
 @end
 
-@implementation FruitDetailViewControllerShould
+@implementation FruitDetailViewControllerShould {
+    FruitDetailViewController *fruitDetailViewController;
+}
 
 - (void)setUp {
     [super setUp];
@@ -23,13 +27,16 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-    }];
+- (void)testSetNavigationTitleToFruitType {
+    NSString *title = @"Apple";
+    NSDecimalNumber *price = [[NSDecimalNumber alloc] initWithInt:60];
+    
+    Fruit *fruit = [[Fruit alloc] initWithPrice:price type:title weight:10];
+    
+    fruitDetailViewController = [[FruitDetailViewController alloc] init];
+    fruitDetailViewController.fruit = fruit;
+    
+    assertThat(fruitDetailViewController.navigationItem.title, equalTo(title));
 }
 
 @end
