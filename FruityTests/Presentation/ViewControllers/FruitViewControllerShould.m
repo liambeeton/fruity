@@ -23,6 +23,7 @@
 
 - (void)setUp {
     [super setUp];
+    [super initialiseInjector];
     
     fruitServiceMock = [self mockForClass:[FruitService class]];
     
@@ -78,6 +79,8 @@
 }
 
 - (void)testHaveTableViewAsSubview {
+    [fruitViewController viewDidLoad];
+    
     NSArray *subviews = fruitViewController.view.subviews;
     
     assertThat(subviews, hasItem(fruitViewController.tableView));
