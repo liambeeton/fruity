@@ -26,7 +26,6 @@
     [super initialiseInjector];
     
     fruitServiceMock = [self mockForClass:[FruitService class]];
-    
     fruitViewController = [[FruitViewController alloc] init];
 }
 

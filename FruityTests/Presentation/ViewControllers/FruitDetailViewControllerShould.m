@@ -21,7 +21,7 @@
 
 - (void)setUp {
     [super setUp];
-    [self initialiseInjector];
+    [super initialiseInjector];
     
     fruitDetailViewController = [[FruitDetailViewController alloc] init];
 }
