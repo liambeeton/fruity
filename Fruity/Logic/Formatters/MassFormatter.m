@@ -11,7 +11,12 @@
 @implementation MassFormatter
 
 - (NSString *)formatMass:(double)kilograms {
+    NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en_GB"];
+    
     NSMassFormatter *massFormatter = [[NSMassFormatter alloc] init];
+    [[massFormatter numberFormatter] setMinimumFractionDigits:2];
+    [[massFormatter numberFormatter] setLocale:locale];
+    
     return [massFormatter stringFromKilograms:kilograms];
 }
 
