@@ -11,6 +11,8 @@
 
 @interface FruitViewController (Private)
 
+- (void)refreshFruit;
+
 @end
 
 @implementation FruitViewController {
@@ -34,6 +36,11 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
     
     [super viewDidLoad];
     
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                   target:self
+                                                                                   action:@selector(refreshFruit)];
+    self.navigationItem.rightBarButtonItem = refreshButton;
+    
     self.tableView.frame = self.view.bounds;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -46,13 +53,20 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
     
     [self.view addSubview:self.tableView];
     
-    fruitArray = [self.fruitService allFruit];
+    [self refreshFruit];
 }
 
 #pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Private methods
+
+- (void)refreshFruit {
+    fruitArray = [self.fruitService allFruit];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
