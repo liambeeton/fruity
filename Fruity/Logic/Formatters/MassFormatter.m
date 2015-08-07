@@ -10,7 +10,7 @@
 
 @implementation MassFormatter
 
-- (NSString *)formatMass:(double)kilograms {
+- (NSString *)formatKilograms:(double)kilograms {
     NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en_GB"];
     
     NSMassFormatter *massFormatter = [[NSMassFormatter alloc] init];

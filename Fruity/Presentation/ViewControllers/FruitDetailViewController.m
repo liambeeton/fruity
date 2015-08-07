@@ -78,7 +78,7 @@ objection_requires(@"tableView", @"currencyFormatter", @"massFormatter")
     } else if (indexPath.row == 1) {
         cell.textLabel.text = [NSString stringWithFormat:@"Type: %@", self.fruit.type];
     } else if (indexPath.row == 2) {
-        cell.textLabel.text = [NSString stringWithFormat:@"Weight: %@", [self.massFormatter formatMass:self.fruit.weight]];
+        cell.textLabel.text = [NSString stringWithFormat:@"Weight: %@", [self.massFormatter formatKilograms:self.fruit.weight]];
     }
     
     return cell;

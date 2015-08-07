@@ -31,7 +31,7 @@
 - (void)testFormatMassAsKilograms {
     double const Weight = 110.00f;
     
-    NSString *formattedMass = [massFormatter formatMass:Weight];
+    NSString *formattedMass = [massFormatter formatKilograms:Weight];
     
     assertThat(formattedMass, equalTo(@"110.00 kg"));
 }

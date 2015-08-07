@@ -10,6 +10,6 @@
 
 @interface MassFormatter : NSObject
 
-- (NSString *)formatMass:(double)kilograms;
+- (NSString *)formatKilograms:(double)kilograms;
 
 @end
