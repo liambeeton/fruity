@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Fruit.h"
+#import "CurrencyFormatter.h"
+#import "MassFormatter.h"
 
 @interface FruitDetailViewController : UIViewController<UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) Fruit *fruit;
+@property (strong, nonatomic) CurrencyFormatter *currencyFormatter;
+@property (strong, nonatomic) MassFormatter *massFormatter;
 
 @end

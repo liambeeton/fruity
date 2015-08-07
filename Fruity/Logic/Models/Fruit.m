@@ -12,7 +12,7 @@
 
 - (instancetype)initWithPrice:(NSDecimalNumber *)price
                          type:(NSString *)type
-                       weight:(NSUInteger)weight {
+                       weight:(double)weight {
     self = [super init];
     if (self) {
         _price = [price copy];
@@ -35,7 +35,7 @@
 }
 
 - (NSUInteger)hash {
-    return self.price.hash ^ self.type.hash ^ self.weight;
+    return self.price.hash ^ self.type.hash ^ [[NSNumber numberWithDouble:self.weight] hash];
 }
 
 @end

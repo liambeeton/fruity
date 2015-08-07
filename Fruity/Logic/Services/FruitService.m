@@ -17,19 +17,18 @@
 - (NSArray *)allFruit {
     NSURL *url = [NSURL URLWithString:kFruitDataUrl];
     NSData *jsonData = [NSData dataWithContentsOfURL:url];
-    
     if (jsonData) {
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
         NSArray *jsonArray = [jsonDict objectForKey:kFruitDataKey];
-        NSMutableArray *fruit = [[NSMutableArray alloc] init];
-        
+        NSMutableArray *fruitArray = [[NSMutableArray alloc] init];
         for (id object in jsonArray) {
-            [fruit addObject:[[Fruit alloc] initWithPrice:object[@"price"] type:object[@"type"] weight:[object[@"weight"] integerValue]]];
+            Fruit *fruit = [[Fruit alloc] initWithPrice:object[@"price"]
+                                                   type:object[@"type"]
+                                                 weight:[object[@"weight"] doubleValue]];
+            [fruitArray addObject:fruit];
         }
-        
-        return [fruit copy];
+        return [fruitArray copy];
     }
-    
     return @[];
 }
 

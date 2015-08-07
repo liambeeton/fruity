@@ -29,10 +29,10 @@
     [super tearDown];
 }
 
-- (void)testReturnAnArrayOfFruits {
-    NSArray *fruits = [fruitService allFruit];
+- (void)testReturnAnArrayOfFruit {
+    NSArray *fruit = [fruitService allFruit];
     
-    assertThat(fruits, isNot(isEmpty()));
+    assertThat(fruit, isNot(isEmpty()));
 }
 
 @end

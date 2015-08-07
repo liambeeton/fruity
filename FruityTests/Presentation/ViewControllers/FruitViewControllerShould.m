@@ -91,7 +91,7 @@
     NSString *title = @"Apple";
     NSDecimalNumber *price = [[NSDecimalNumber alloc] initWithInt:60];
     
-    Fruit *fruit = [[Fruit alloc] initWithPrice:price type:title weight:10];
+    Fruit *fruit = [[Fruit alloc] initWithPrice:price type:title weight:10.0f];
     NSArray *fruitArray = [[NSArray alloc] initWithObjects:fruit, nil];
     
     OCMStub([fruitServiceMock allFruit]).andReturn(fruitArray);

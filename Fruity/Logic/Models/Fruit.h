@@ -12,11 +12,11 @@
 
 @property (nonatomic, readonly) NSDecimalNumber *price;
 @property (nonatomic, readonly) NSString *type;
-@property (nonatomic, readonly) NSUInteger weight;
+@property (nonatomic, readonly) double weight;
 
 - (instancetype)initWithPrice:(NSDecimalNumber *)price
                          type:(NSString *)type
-                       weight:(NSUInteger)weight;
+                       weight:(double)weight;
 - (BOOL)isEqual:(id)obj;
 - (NSUInteger)hash;
 

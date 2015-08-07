@@ -15,13 +15,14 @@
 
 @implementation FruitDetailViewController
 
-objection_requires(@"tableView")
+objection_requires(@"tableView", @"currencyFormatter", @"massFormatter")
 
 - (void)setFruit:(Fruit *)fruit {
     if (![_fruit isEqual:fruit]) {
         if (fruit.price != nil && fruit.type != nil) {
             _fruit = fruit;
             self.navigationItem.title = fruit.type;
+            [self.tableView reloadData];
         }
     }
 }
@@ -73,11 +74,11 @@ objection_requires(@"tableView")
     }
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = [self.fruit.price stringValue];
+        cell.textLabel.text = [NSString stringWithFormat:@"Price: %@", [self.currencyFormatter formatPrice:self.fruit.price]];
     } else if (indexPath.row == 1) {
-        cell.textLabel.text = self.fruit.type;
+        cell.textLabel.text = [NSString stringWithFormat:@"Type: %@", self.fruit.type];
     } else if (indexPath.row == 2) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@", @(self.fruit.weight)];
+        cell.textLabel.text = [NSString stringWithFormat:@"Weight: %@", [self.massFormatter formatMass:self.fruit.weight]];
     }
     
     return cell;
