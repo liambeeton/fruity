@@ -17,4 +17,6 @@
 @property (strong, nonatomic) FruitDetailViewController *fruitDetailViewController;
 @property (strong, nonatomic) FruitService *fruitService;
 
+- (void)updateTableViewWithData:(NSArray *)data;
+
 @end

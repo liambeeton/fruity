@@ -34,9 +34,11 @@
 }
 
 - (void)testLoadAllFruit {
+    OCMExpect([fruitServiceMock downloadDataFromUrlWithCompletion:[OCMArg any]]);
+    
     [fruitViewController viewDidLoad];
     
-    OCMVerify([fruitServiceMock allFruit]);
+    OCMVerify([fruitServiceMock downloadDataFromUrlWithCompletion:[OCMArg any]]);
 }
 
 - (void)testViewControllerInstantiates {
@@ -88,13 +90,22 @@
 - (void)testHaveTableViewWithNumberOfRowsInSection {
     int expectedNumberOfRows = 1;
     
-    NSString *title = @"Apple";
     NSDecimalNumber *price = [[NSDecimalNumber alloc] initWithInt:60];
+    NSString *type = @"Apple";
+    NSNumber *weight = [NSNumber numberWithDouble:110.00f];
     
-    Fruit *fruit = [[Fruit alloc] initWithPrice:price type:title weight:10.0f];
-    NSArray *fruitArray = [[NSArray alloc] initWithObjects:fruit, nil];
+    NSDictionary *fruitDict = [[NSDictionary alloc] initWithObjectsAndKeys:price, @"price", type, @"type", weight, @"weight", nil];
+    NSArray *fruitArray = [[NSArray alloc] initWithObjects:fruitDict, nil];
+    NSDictionary *dataDict = [[NSDictionary alloc] initWithObjectsAndKeys:fruitArray, @"fruit", nil];
     
-    OCMStub([fruitServiceMock allFruit]).andReturn(fruitArray);
+    OCMStub([fruitServiceMock downloadDataFromUrlWithCompletion:[OCMArg any]]).andDo(^(NSInvocation *invocation) {
+        void (^successBlock)(NSDictionary *jsonDict) = nil;
+        
+        [invocation getArgument:&successBlock atIndex:2];
+        successBlock(dataDict);
+        
+        [fruitViewController updateTableViewWithData:fruitArray];
+    });
     
     [fruitViewController viewDidLoad];
     

@@ -10,6 +10,6 @@
 
 @interface FruitService : NSObject
 
-- (NSArray *)allFruit;
+- (void)downloadDataFromUrlWithCompletion:(void (^)(NSDictionary *))completion;
 
 @end

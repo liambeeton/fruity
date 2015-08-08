@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		023648A280D9B30044513588 /* libPods-FruityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 385530F29E17CF7423A7CBC7 /* libPods-FruityTests.a */; };
+		2221FE911B756BF600EE260E /* StatisticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221FE901B756BF600EE260E /* StatisticsService.m */; };
+		2221FE931B7607FE00EE260E /* StatisticsServiceShould.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221FE921B7607FE00EE260E /* StatisticsServiceShould.m */; };
 		22455F631B739DC0005880A6 /* BaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22455F621B739DC0005880A6 /* BaseTestCase.m */; };
 		225803A91B73FC7E00681AB1 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 225803A81B73FC7E00681AB1 /* TestingAppDelegate.m */; };
 		226559FC1B74B931009D0597 /* CurrencyFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 226559FB1B74B931009D0597 /* CurrencyFormatter.m */; };
@@ -41,6 +43,9 @@
 /* Begin PBXFileReference section */
 		091D9DA49ABFF95E042CFEDC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1415AB403354858A829D6743 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2221FE8F1B756BF600EE260E /* StatisticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticsService.h; path = Logic/Services/StatisticsService.h; sourceTree = "<group>"; };
+		2221FE901B756BF600EE260E /* StatisticsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsService.m; path = Logic/Services/StatisticsService.m; sourceTree = "<group>"; };
+		2221FE921B7607FE00EE260E /* StatisticsServiceShould.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsServiceShould.m; path = Logic/Services/StatisticsServiceShould.m; sourceTree = "<group>"; };
 		22455F611B739DC0005880A6 /* BaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTestCase.h; sourceTree = "<group>"; };
 		22455F621B739DC0005880A6 /* BaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTestCase.m; sourceTree = "<group>"; };
 		225803A71B73FC7E00681AB1 /* TestingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingAppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +173,8 @@
 			children = (
 				22A75FBD1B714B9A00CEEF9D /* FruitService.h */,
 				22A75FBE1B714B9A00CEEF9D /* FruitService.m */,
+				2221FE8F1B756BF600EE260E /* StatisticsService.h */,
+				2221FE901B756BF600EE260E /* StatisticsService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -185,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				22A75FC21B714BC400CEEF9D /* FruitServiceShould.m */,
+				2221FE921B7607FE00EE260E /* StatisticsServiceShould.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -473,6 +481,7 @@
 				22FFEEEA1B713D0F00D6C67F /* AppDelegate.m in Sources */,
 				22D4C5F01B72A064007D947B /* FruitDetailViewController.m in Sources */,
 				22FFEEE71B713D0F00D6C67F /* main.m in Sources */,
+				2221FE911B756BF600EE260E /* StatisticsService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +496,7 @@
 				22A75FB61B71466F00CEEF9D /* FruitViewControllerShould.m in Sources */,
 				225803A91B73FC7E00681AB1 /* TestingAppDelegate.m in Sources */,
 				22D4C5F21B72A760007D947B /* FruitDetailViewControllerShould.m in Sources */,
+				2221FE931B7607FE00EE260E /* StatisticsServiceShould.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

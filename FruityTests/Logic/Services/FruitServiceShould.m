@@ -29,10 +29,10 @@
     [super tearDown];
 }
 
-- (void)testReturnAnArrayOfFruit {
-    NSArray *fruit = [fruitService allFruit];
-    
-    assertThat(fruit, isNot(isEmpty()));
+- (void)testDownloadJsonDataFromUrl {
+    [fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict) {
+        assertThat(jsonDict, isNot(isEmpty()));
+    }];
 }
 
 @end

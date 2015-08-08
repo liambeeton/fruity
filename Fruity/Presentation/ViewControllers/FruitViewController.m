@@ -9,6 +9,8 @@
 #import <Objection/Objection.h>
 #import "FruitViewController.h"
 
+#define kFruitDataKey @"fruit"
+
 @interface FruitViewController (Private)
 
 - (void)refreshFruit;
@@ -65,7 +67,27 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
 #pragma mark - Private methods
 
 - (void)refreshFruit {
-    fruitArray = [self.fruitService allFruit];
+    [self.fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict) {
+        NSMutableArray *dataArray = [[NSMutableArray alloc] init];
+        
+        NSArray *jsonArray = [jsonDict objectForKey:kFruitDataKey];
+        for (id object in jsonArray) {
+            Fruit *fruit = [[Fruit alloc] initWithPrice:object[@"price"]
+                                                   type:object[@"type"]
+                                                 weight:[object[@"weight"] doubleValue]];
+            [dataArray addObject:fruit];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([[NSThread currentThread] isMainThread]){
+                [self updateTableViewWithData:[dataArray copy]];
+            }
+        });
+    }];
+}
+
+- (void)updateTableViewWithData:(NSArray *)data {
+    fruitArray = data;
     [self.tableView reloadData];
 }
 
