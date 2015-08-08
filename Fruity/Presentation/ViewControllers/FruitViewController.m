@@ -14,11 +14,13 @@
 @interface FruitViewController (Private)
 
 - (void)refreshFruit;
+- (NSString *)viewLoadTimeAsString;
 
 @end
 
 @implementation FruitViewController {
     NSArray *fruitArray;
+    NSDate *viewLoadStart;
 }
 
 objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService", @"statisticsService")
@@ -32,6 +34,20 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService", 
 }
 
 #pragma mark - View lifecycle
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    viewLoadStart = [NSDate date];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.statisticsService trackUsageWithEvent:@"display"
+                                      usageData:[self viewLoadTimeAsString]
+                                  andCompletion:nil];
+}
 
 - (void)viewDidLoad {
     [[JSObjection defaultInjector] injectDependencies:self];
@@ -88,6 +104,16 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService", 
             [self.statisticsService trackUsageWithEvent:@"error" usageData:[error localizedDescription] andCompletion:nil];
         }
     }];
+}
+
+- (NSString *)viewLoadTimeAsString {
+    double loadTimeInMilliseconds = [viewLoadStart timeIntervalSinceNow] * -1000.00f;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:0];
+    [formatter setRoundingMode: NSNumberFormatterRoundDown];
+    
+    return [formatter stringFromNumber:[NSNumber numberWithDouble:loadTimeInMilliseconds]];
 }
 
 #pragma mark - Public helper methods

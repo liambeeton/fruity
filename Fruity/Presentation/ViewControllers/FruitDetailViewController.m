@@ -13,9 +13,11 @@
 
 @end
 
-@implementation FruitDetailViewController
+@implementation FruitDetailViewController {
+    NSDate *viewLoadStart;
+}
 
-objection_requires(@"tableView", @"currencyFormatter", @"massFormatter")
+objection_requires(@"tableView", @"currencyFormatter", @"massFormatter", @"statisticsService")
 
 - (void)setFruit:(Fruit *)fruit {
     if (![_fruit isEqual:fruit]) {
@@ -28,6 +30,20 @@ objection_requires(@"tableView", @"currencyFormatter", @"massFormatter")
 }
 
 #pragma mark - View lifecycle
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    viewLoadStart = [NSDate date];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.statisticsService trackUsageWithEvent:@"display"
+                                      usageData:[self viewLoadTimeAsString]
+                                  andCompletion:nil];
+}
 
 - (void)viewDidLoad {
     [[JSObjection defaultInjector] injectDependencies:self];
@@ -44,6 +60,18 @@ objection_requires(@"tableView", @"currencyFormatter", @"massFormatter")
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     [self.view addSubview:self.tableView];
+}
+
+#pragma mark - Private helper methods
+
+- (NSString *)viewLoadTimeAsString {
+    double loadTimeInMilliseconds = [viewLoadStart timeIntervalSinceNow] * -1000.00f;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:0];
+    [formatter setRoundingMode: NSNumberFormatterRoundDown];
+    
+    return [formatter stringFromNumber:[NSNumber numberWithDouble:loadTimeInMilliseconds]];
 }
 
 #pragma mark - Memory management

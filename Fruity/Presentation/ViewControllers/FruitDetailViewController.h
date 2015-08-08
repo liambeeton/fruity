@@ -10,6 +10,7 @@
 #import "Fruit.h"
 #import "CurrencyFormatter.h"
 #import "MassFormatter.h"
+#import "StatisticsService.h"
 
 @interface FruitDetailViewController : UIViewController<UITableViewDataSource>
 
@@ -17,5 +18,6 @@
 @property (strong, nonatomic) Fruit *fruit;
 @property (strong, nonatomic) CurrencyFormatter *currencyFormatter;
 @property (strong, nonatomic) MassFormatter *massFormatter;
+@property (strong, nonatomic) StatisticsService *statisticsService;
 
 @end

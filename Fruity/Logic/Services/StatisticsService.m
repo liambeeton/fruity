@@ -21,13 +21,15 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                if (data.length > 0 && error == nil) {
-                                                    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                             options:kNilOptions
-                                                                                                               error:nil];
-                                                    completion(jsonDict, nil);
-                                                } else {
-                                                    completion(nil, error);
+                                                if (completion) {
+                                                    if (data.length > 0 && error == nil) {
+                                                        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                                 options:kNilOptions
+                                                                                                                   error:nil];
+                                                        completion(jsonDict, nil);
+                                                    } else {
+                                                        completion(nil, error);
+                                                    }
                                                 }
                                             }];
     [task resume];
