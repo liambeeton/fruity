@@ -99,10 +99,10 @@
     NSDictionary *dataDict = [[NSDictionary alloc] initWithObjectsAndKeys:fruitArray, @"fruit", nil];
     
     OCMStub([fruitServiceMock downloadDataFromUrlWithCompletion:[OCMArg any]]).andDo(^(NSInvocation *invocation) {
-        void (^successBlock)(NSDictionary *jsonDict, NSError *error) = nil;
+        void (^successBlock)(NSDictionary *jsonDict, NSString *time, NSError *error) = nil;
         
         [invocation getArgument:&successBlock atIndex:2];
-        successBlock(dataDict, nil);
+        successBlock(dataDict, nil, nil);
         
         [fruitViewController updateTableViewWithData:fruitArray];
     });

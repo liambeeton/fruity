@@ -83,7 +83,7 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService", 
 #pragma mark - Private helper methods
 
 - (void)refreshFruit {
-    [self.fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict, NSError *error) {
+    [self.fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict, NSString *requestTime, NSError *error) {
         if (error == nil) {
             NSMutableArray *dataArray = [[NSMutableArray alloc] init];
             
@@ -94,6 +94,8 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService", 
                                                      weight:[object[@"weight"] doubleValue]];
                 [dataArray addObject:fruit];
             }
+            
+            [self.statisticsService trackUsageWithEvent:@"load" usageData:requestTime andCompletion:nil];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([[NSThread currentThread] isMainThread]){
