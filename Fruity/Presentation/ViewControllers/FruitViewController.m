@@ -64,7 +64,7 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Private methods
+#pragma mark - Private helper methods
 
 - (void)refreshFruit {
     [self.fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict) {
@@ -85,6 +85,8 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
         });
     }];
 }
+
+#pragma mark - Public helper methods
 
 - (void)updateTableViewWithData:(NSArray *)data {
     fruitArray = data;

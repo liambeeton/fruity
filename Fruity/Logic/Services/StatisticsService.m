@@ -13,8 +13,8 @@
 @implementation StatisticsService
 
 - (void)trackUsageWithEvent:(NSString *)event usageData:(NSString *)data andCompletion:(void (^)(NSDictionary *))completion {
-    NSURL *URL = [NSURL URLWithString:kStatisticsUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSString *statisticsUrl = [NSString stringWithFormat:@"%@?event=%@&data=%@", kStatisticsUrl, event, data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[statisticsUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
