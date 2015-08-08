@@ -12,7 +12,9 @@
 
 @implementation StatisticsService
 
-- (void)trackUsageWithEvent:(NSString *)event usageData:(NSString *)data andCompletion:(void (^)(NSDictionary *))completion {
+- (void)trackUsageWithEvent:(NSString *)event
+                  usageData:(NSString *)data
+              andCompletion:(void (^)(NSDictionary *, NSError *))completion {
     NSString *statisticsUrl = [NSString stringWithFormat:@"%@?event=%@&data=%@", kStatisticsUrl, event, data];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[statisticsUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
@@ -23,7 +25,9 @@
                                                     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
                                                                                                              options:kNilOptions
                                                                                                                error:nil];
-                                                    completion(jsonDict);
+                                                    completion(jsonDict, nil);
+                                                } else {
+                                                    completion(nil, error);
                                                 }
                                             }];
     [task resume];

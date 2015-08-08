@@ -29,9 +29,25 @@
     [super tearDown];
 }
 
-- (void)testReturnAnArrayOfFruit {
-    [statisticsService trackUsageWithEvent:@"load" usageData:@"100" andCompletion:^(NSDictionary *jsonDict) {
-        assertThat(jsonDict, isNot(isEmpty()));
+- (void)testTrackUsageForLoadEvent {
+    [statisticsService trackUsageWithEvent:@"load" usageData:@"100" andCompletion:^(NSDictionary *jsonDict, NSError *error) {
+        assertThat(jsonDict, isNot(nilValue()));
+    }];
+}
+
+- (void)testTrackUsageForDisplayEvent {
+    [statisticsService trackUsageWithEvent:@"display" usageData:@"3000" andCompletion:^(NSDictionary *jsonDict, NSError *error) {
+        assertThat(jsonDict, isNot(nilValue()));
+    }];
+}
+
+- (void)testTrackUsageForErrorEvent {
+    NSMutableDictionary *errorDict = [NSMutableDictionary dictionary];
+    [errorDict setValue:@"an error has occurred" forKey:NSLocalizedDescriptionKey];
+    NSError *error = [NSError errorWithDomain:@"test" code:200 userInfo:errorDict];
+    
+    [statisticsService trackUsageWithEvent:@"error" usageData:[error localizedDescription] andCompletion:^(NSDictionary *jsonDict, NSError *error) {
+        assertThat(jsonDict, isNot(nilValue()));
     }];
 }
 

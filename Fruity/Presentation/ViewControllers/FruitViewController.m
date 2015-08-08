@@ -21,7 +21,7 @@
     NSArray *fruitArray;
 }
 
-objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
+objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService", @"statisticsService")
 
 - (id)init {
     self = [super init];
@@ -67,22 +67,26 @@ objection_requires(@"tableView", @"fruitDetailViewController", @"fruitService")
 #pragma mark - Private helper methods
 
 - (void)refreshFruit {
-    [self.fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict) {
-        NSMutableArray *dataArray = [[NSMutableArray alloc] init];
-        
-        NSArray *jsonArray = [jsonDict objectForKey:kFruitDataKey];
-        for (id object in jsonArray) {
-            Fruit *fruit = [[Fruit alloc] initWithPrice:object[@"price"]
-                                                   type:object[@"type"]
-                                                 weight:[object[@"weight"] doubleValue]];
-            [dataArray addObject:fruit];
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if ([[NSThread currentThread] isMainThread]){
-                [self updateTableViewWithData:[dataArray copy]];
+    [self.fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict, NSError *error) {
+        if (error == nil) {
+            NSMutableArray *dataArray = [[NSMutableArray alloc] init];
+            
+            NSArray *jsonArray = [jsonDict objectForKey:kFruitDataKey];
+            for (id object in jsonArray) {
+                Fruit *fruit = [[Fruit alloc] initWithPrice:object[@"price"]
+                                                       type:object[@"type"]
+                                                     weight:[object[@"weight"] doubleValue]];
+                [dataArray addObject:fruit];
             }
-        });
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if ([[NSThread currentThread] isMainThread]){
+                    [self updateTableViewWithData:[dataArray copy]];
+                }
+            });
+        } else {
+            [self.statisticsService trackUsageWithEvent:@"error" usageData:[error localizedDescription] andCompletion:nil];
+        }
     }];
 }
 

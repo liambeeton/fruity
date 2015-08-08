@@ -30,7 +30,7 @@
 }
 
 - (void)testDownloadJsonDataFromUrl {
-    [fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict) {
+    [fruitService downloadDataFromUrlWithCompletion:^(NSDictionary *jsonDict, NSError *error) {
         assertThat(jsonDict, isNot(isEmpty()));
     }];
 }

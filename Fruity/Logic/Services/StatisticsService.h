@@ -10,6 +10,8 @@
 
 @interface StatisticsService : NSObject
 
-- (void)trackUsageWithEvent:(NSString *)event usageData:(NSString *)data andCompletion:(void (^)(NSDictionary *))completion;
+- (void)trackUsageWithEvent:(NSString *)event
+                  usageData:(NSString *)data
+              andCompletion:(void (^)(NSDictionary *, NSError *))completion;
 
 @end

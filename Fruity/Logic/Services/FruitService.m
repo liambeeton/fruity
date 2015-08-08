@@ -13,7 +13,7 @@
 
 @implementation FruitService
 
-- (void)downloadDataFromUrlWithCompletion:(void (^)(NSDictionary *))completion {
+- (void)downloadDataFromUrlWithCompletion:(void (^)(NSDictionary *, NSError *))completion {
     NSURL *URL = [NSURL URLWithString:kFruitDataUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
@@ -25,7 +25,9 @@
                                                     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
                                                                                                              options:kNilOptions
                                                                                                                error:nil];
-                                                    completion(jsonDict);
+                                                    completion(jsonDict, nil);
+                                                } else {
+                                                    completion(nil, error);
                                                 }
                                   }];
     [task resume];
