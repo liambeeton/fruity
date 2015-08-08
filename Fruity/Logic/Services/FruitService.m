@@ -11,6 +11,12 @@
 
 #define kFruitDataUrl @"https://raw.githubusercontent.com/fmtvp/recruit-test-data/master/data.json"
 
+@interface FruitService (Private)
+
+- (NSString *)networkRequestCompleteTimeAsString;
+
+@end
+
 @implementation FruitService {
     NSDate *networkRequestStart;
 }
