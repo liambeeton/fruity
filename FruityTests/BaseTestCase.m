@@ -8,6 +8,12 @@
 
 #import "BaseTestCase.h"
 
+@interface BaseTestCase (Private)
+
+- (void)bindModuleWithMock:(id)mock andClass:(Class)class;
+
+@end
+
 @implementation BaseTestCase {
     JSObjectionInjector *injector;
     JSObjectionModule *testModule;
